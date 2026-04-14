@@ -49,7 +49,7 @@ spec:
       taskRef:
         name: jasmine
       runAfter: 
-        - npminstall
+        - name: npminstall
     - name: build 
       workspaces:
         - name: source

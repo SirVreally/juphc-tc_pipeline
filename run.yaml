@@ -1,10 +1,10 @@
 apiVersion: tekton.dev/v1beta1
-kind: KIND 
+kind: PipelineRun
 metadata:
   generateName: juphc-tc-pipeline-run-
 spec:
-  serviceAccountName: pipeline 
-  pipelineRef: 
+  serviceAccountName: pipeline
+  pipelineRef:
     name: juphc-tc-pipeline
   params:
     - name: repo-url
@@ -19,4 +19,4 @@ spec:
       claimName: pipelinerun-pvc
   - name: dockerconfig-ws
     secret:
-      secretName: docker-reg-creds 
+      secretName: docker-reg-creds
